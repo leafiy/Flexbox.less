@@ -130,18 +130,18 @@ flex: 1;
           <small>we can responsive</small>
         </div>
 
-        <p>remove flex attr and set a width</p>
+        <p class="lead">remove flex attr and set a width</p>
+        
+        <div class="grid grid--gutters">
+          <div class="grid-cell width-half">
+            <div class="Demo">I have a 50% width now</div>
+          </div>
+          <div class="grid-cell width-half">
+            <div class="Demo">I have a 50% width now</div>
+          </div>
+        </div>
         <p><code>width: 50% !important;
 flex: none !important;</code></p>
-        <div class="grid grid--gutters">
-          <div class="grid-cell width-half">
-            <div class="Demo">I have a 50% width now</div>
-          </div>
-          <div class="grid-cell width-half">
-            <div class="Demo">I have a 50% width now</div>
-          </div>
-        </div>
-
         <hr>
         <div class="grid grid--gutters">
           <div class="grid-cell width-3">
@@ -171,11 +171,12 @@ flex: none !important;</code></p>
           <div class="grid-cell width-4">
             <div class="Demo">I have a 40% width now</div>
           </div>
-
+    
         </div>
+        <p>needs <code>flex:none</code> and <code>display:flex</code>, so confused!!</p>
         <hr>
         <div class="grid grid--gutters grid--flexcells">
-          <div class="grid-cell width-3">
+          <div class="grid-cell width-3" style="width:30%" id="increase">
             <div class="Demo">I have a 30% width now</div>
           </div>
           <div class="grid-cell width-2">
@@ -186,7 +187,8 @@ flex: none !important;</code></p>
           </div>
 
         </div>
-
+        <p>The auto-width element must has <code>.display-flex-item;</code></p>
+        <button class="btn btn-sm btn-primary increase">Click to chage width</button>
       </div>
     </div>
   </div>

@@ -13,9 +13,25 @@
       $('#example2 .add-cell').on('click',function(){
         $('#example2 .grid').append(cell);
       })
+    },
+    example3 : function(){
+      var i = 1;
+      $('#example3 .increase').on('click',function(){
+        
+        i++;
+        if (i>2){
+          i=1;
+          $('#increase').css('width','40%')
+        }else{
+          $('#increase').css('width','20%')
+        }
+        
+      })
+      
     }
   });
   $('#example1').example1();
   $('#example2').example2();
+  $('#example3').example3();
 })(jQuery);
 
