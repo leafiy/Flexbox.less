@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Flexbox Example</title>
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css"></head>
+<body>
+  <div class="container">
+    <div class="page-header">
+      <h1>
+        Flexbox Example
+        <small>pure css layout with fun and easy</small>
+      </h1>
+      <p class="lead">
+        Just a demo for showing how to use Flexbox in the simplest way, without worrying about flex-versins
+      </p>
+      <p class="lead">
+        Support IE10+ / Chrome / Safari / Firefox / Opera(only webkit)
+      </p>
+    </div>
+    <div class="page-header">
+      <h3>For flex container</h3>
+      <h4>Basic css code</h4>
+      <p>
+        <code>display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;</code>
+      </p>
+
+      <h4>[If container] && [Compatible with old flex]</h4>
+      <p>
+        <code>-webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;</code>
+      </p>
+
+      <p>If less</p>
+      <p>
+        <code>.display-flex-container{display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;-webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;}</code>
+      </p>
+      <p>
+        <code>.display-flex-container;</code>
+      </p>
+      <!-- <h4>For flex items</h4>
+      <p><code>.display-flex-item{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+  }</code></p>
+  <p><code>.display-flex-item;</code></p> -->
+      <small>I always forget these complicated attributes, so less/sass is a good choice</small>
+    </div>
+    <div class="examples">
+      <div id="example1" class="example-box">
+        <div class="page-header">
+          <h3>boxes width 1:1:1</h3>
+        </div>
+
+        <p class="lead">Arrange boxes without setting a width</p>
+        <p class="lead">
+          <button class="btn btn-sm btn-primary add-cell">Add one cell</button>
+        </p>
+        <div class="grid grid--gutters">
+          <div class="grid-cell">
+            <div class="Demo">
+              1/ <u class="counter">2</u>
+            </div>
+          </div>
+          <div class="grid-cell">
+            <div class="Demo">
+              1/ <u class="counter">2</u>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p>For items</p>
+      <p><code>
+        -webkit-box-flex: 1;
+-webkit-flex: 1;
+-moz-box-flex: 1;
+-ms-flex: 1;
+flex: 1;
+</code></p>
+      <div id="example2" class="example-box">
+        <div class="page-header">
+          <h3>equal height</h3>
+        </div>
+
+        <p class="lead">easily set items as flex</p>
+        <p class="lead">
+          <button class="btn btn-sm btn-primary add-cell">Add one cell</button>
+        </p>
+        <div class="grid grid--gutters grid--flexcells">
+          <div class="grid-cell">
+            <div class="Demo">
+              Being the savage's bowsman, that is, the person who pulled the bow-oar in his boat (the second one from forward), it was my cheerful duty to attend upon him while taking that hard-scrabble scramble upon the dead whale's back.
+            </div>
+          </div>
+          <div class="grid-cell">
+            <div class="Demo">another cell</div>
+          </div>
+          <div class="grid-cell">
+            <div class="Demo">
+              You have seen Italian organ-boys holding a dancing-ape by a long cord. Just so, from the ship's steep side, did I hold Queequeg down there in the sea, by what is technically called in the fishery a monkey-rope, attached to a strong strip of canvas belted round his waist.
+            </div>
+          </div>
+        </div>
+        <p>For items</p>
+        <p><code>display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;</code></p>
+      </div>
+      <div id="example3" class="example-box">
+        <div class="page-header">
+          <h3>individual width boxes</h3>
+          <small>we can responsive</small>
+        </div>
+
+        <p>remove flex attr and set a width</p>
+        <p><code>width: 50% !important;
+flex: none !important;</code></p>
+        <div class="grid grid--gutters">
+          <div class="grid-cell width-half">
+            <div class="Demo">I have a 50% width now</div>
+          </div>
+          <div class="grid-cell width-half">
+            <div class="Demo">I have a 50% width now</div>
+          </div>
+        </div>
+
+        <hr>
+        <div class="grid grid--gutters">
+          <div class="grid-cell width-3">
+            <div class="Demo">I have a 30% width now</div>
+          </div>
+          <div class="grid-cell width-2">
+            <div class="Demo">I have a 20% width now</div>
+          </div>
+          <div class="grid-cell width-4">
+            <div class="Demo">I have a 40% width now</div>
+          </div>
+          <div class="grid-cell width-1">
+            <div class="Demo">I have a 10% width now</div>
+          </div>
+        </div>
+        <hr>
+        <div class="grid grid--gutters grid--flexcells">
+          <div class="grid-cell width-3">
+            <div class="Demo">I have a 30% width now</div>
+          </div>
+          <div class="grid-cell width-1">
+            <div class="Demo">I have a 10% width now</div>
+          </div>
+          <div class="grid-cell width-2">
+            <div class="Demo">I have a 20% width now</div>
+          </div>
+          <div class="grid-cell width-4">
+            <div class="Demo">I have a 40% width now</div>
+          </div>
+
+        </div>
+        <hr>
+        <div class="grid grid--gutters grid--flexcells">
+          <div class="grid-cell width-3">
+            <div class="Demo">I have a 30% width now</div>
+          </div>
+          <div class="grid-cell width-2">
+            <div class="Demo">I have a 20% width now</div>
+          </div>
+          <div class="grid-cell width-auto">
+            <div class="Demo">I am auto width!!</div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/example.js"></script>
+</body>
+</html>
