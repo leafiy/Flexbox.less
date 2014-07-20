@@ -58,6 +58,21 @@
 .grid--flexcells>.grid-cell {
   .flex-item;
 }
+.grid--fullfill{
+  .flex-align(space-between);
+}
+.grid--flexstart{
+  .flex-align(flex-start);
+}
+.grid--flexend{
+  .flex-align(flex-end);
+}
+.grid--baseline{
+  .flex-align(baseline);
+}
+.grid--stretch{
+  .flex-align(stretch);
+}
 .grid {
   .flex-container;
 
@@ -83,6 +98,20 @@
     .flex-count(1);
   }
 }
+#example5{
+  .grid{
+    .flex-align(center);
+  }
+}
+#example7{
+  .grid{
+    .grid-cell{
+
+        margin-left: 10%;
+
+    }
+  }
+}
 .flex-count1{
   .flex-count(1) !important;
 }
@@ -95,10 +124,27 @@
 .flex-count4{
   .flex-count(4) !important;
 }
-.align-center{
-  .flex-align(center);
-}
 //demo
+.header-example{
+  border:1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+  padding:20px;
+}
+@media (max-width: 640px) {
+  #example6{
+    .header-example{
+      .grid--fullfill{
+        .flex-align(center);
+      }
+      .logo{
+        width: 100%;
+        margin-bottom: 10px;
+        text-align: center;
+      }
+    }
+  }
+
+}
 .grid-cell {
   .transition;
   &.width-half{
@@ -106,7 +152,7 @@
     .flex-none;
   }
   &.width-3{
-    width: 30%;
+    width: 33.3333333333333%;
     .flex-none;
   }
   &.width-2{
@@ -123,6 +169,10 @@
   }
   &.width-auto{
     width: auto;
+
+  }
+  &.width-full{
+    width: 100%;
 
   }
   &:nth-child(odd){

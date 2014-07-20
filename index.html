@@ -88,7 +88,8 @@
         <code>.flex-count("num");</code>
       </p>
       <h4>Flex align</h4>
-      <p><code>
+      <p>
+        <code>
         .flex-align(@a){
           -webkit-flex-align: @a;
               -ms-flex-align: @a;
@@ -103,10 +104,13 @@
               -moz-box-align: @a;
 
   }
-      </code></p>
-      <p><code>
+      </code>
+      </p>
+      <p>
+        <code>
         @a:center / flex-start / flex-end / space-between / space-around
-      </code></p>
+      </code>
+      </p>
     </div>
     <div class="examples">
       <div id="example1" class="example-box">
@@ -348,17 +352,113 @@ flex: none !important;</code>
           <h3>Center aligned boxed</h3>
         </div>
         <p class="lead">need not care how many boxed, what's box's width</p>
-        <div class="grid grid--gutters grid--flexcells align-center">
-          <div class="grid-cell width-half">
-            <div class="demo">
-asdf
-
-            </div>
+        <div class="grid grid--gutters grid--flexcells">
+          <div class="grid-cell width-3">
+            <div class="demo">I am in center</div>
           </div>
 
+        </div>
+        <p class="lead">
+          <button class="btn btn-sm btn-primary add-cell">Add one big cell</button>
+          <button class="btn btn-sm btn-primary add-cell2">Add one small cell</button>
+          <button class="btn btn-sm btn-primary add-cell3">Add one full cell</button>
+        </p>
+        <p>Code</p>
+        <p>
+          <code>.grid{.flex-align(center)};</code>
+        </p>
+      </div>
+      <div id="example6" class="example-box">
+        <div class="page-header">
+          <h3>Justify content</h3>
+        </div>
+        <p class="lead">boxes will fullfill the container</p>
+
+        <div class="grid grid--gutters grid--flexcells grid--fullfill">
+          <div class="grid-cell width-2">
+            <div class="demo">I am Left</div>
+          </div>
+          <div class="grid-cell width-2">
+            <div class="demo">I am right</div>
+          </div>
+
+        </div>
+        <p class="lead">
+          <button class="btn btn-sm btn-primary add-cell">Add one cell</button>
+        </p>
+        <p>Code</p>
+        <p>
+          <code>.grid{.flex-align(space-bewteen)};</code>
+        </p>
+        <hr>
+        <blockquote>
+          very easy to make a responsive header with <b>Example4</b>
+          <br>zoom your browser see change</blockquote>
+        <div class="header-example">
+          <div class="grid grid--fullfill">
+            <div class="grid-cell logo">
+              <img src="images/logo.png" alt=""></div>
+            <div class="grid-cell navs">link1 . link2 . link3 . link4 . link5 . link6</div>
+          </div>
 
         </div>
       </div>
+      <div id="example7" class="example-box">
+        <div class="page-header">
+          <h3>Align : flex-start / flex-end / baseline / stretch</h3>
+        </div>
+        <p class="lead">
+          The cross-start margin edge of the flex item is flushed with the cross-start edge of the line.
+        </p>
+
+        <div class="grid grid--gutters grid--flexcells grid--flexstart">
+          <div class="grid-cell width-2">
+            <div class="demo">Flex-start</div>
+          </div>
+          <div class="grid-cell width-1"><div class="demo">10% width</div></div>
+        </div>
+        <p class="lead">
+          <button class="btn btn-sm btn-primary add-cell">Add one cell</button>
+        </p>
+        <p>Code</p>
+        <p>
+          <code>.grid{.flex-align(flex-start)};</code>
+        </p>
+        <hr>
+        <p class="lead">The cross-end margin edge of the flex item is flushed with the cross-end edge of the line.</p>
+         <div class="grid grid--gutters grid--flexcells grid--flexend">
+          <div class="grid-cell width-2">
+            <div class="demo">Flex-end</div>
+          </div>
+          <div class="grid-cell width-1"><div class="demo">10% width</div></div>
+
+        </div>
+        <p class="lead">
+          <button class="btn btn-sm btn-primary add-cell2">Add one cell</button>
+        </p>
+        <p>Code</p>
+        <p>
+          <code>.grid{.flex-align(flex-end)};</code>
+        </p>
+        <hr>
+        <p class="lead">All flex items are aligned such that their baselines align. The item with the largest distance between its cross-start margin edge and its baseline is flushed with the cross-start edge of the line.</p>
+
+        <div class="grid grid--gutters grid--flexcells grid--baseline">
+          <div class="grid-cell width-2">
+            <div class="demo">baseline</div>
+          </div>
+          <div class="grid-cell width-1"><div class="demo">10% width</div></div>
+
+        </div>
+        <p class="lead">
+          <button class="btn btn-sm btn-primary add-cell3">Add one cell</button>
+        </p>
+
+
+
+
+
+        </div>
     </div>
   </div>
   <script src="js/jquery.min.js"></script>
