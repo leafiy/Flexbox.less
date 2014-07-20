@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Flexbox Example</title>
+  <title>Flexbox.less</title>
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/style.css"></head>
@@ -10,8 +10,8 @@
   <div class="container">
     <div class="page-header">
       <h1>
-        Flexbox Example
-        <small>pure css layout with fun and easy</small>
+        Flexbox.less
+        <small>easy to use flexbox with LESS</small>
       </h1>
       <p class="lead">
         Just a demo for showing how to use Flexbox in the simplest way, without worrying about flex-versins
@@ -30,17 +30,17 @@
     display: -ms-flexbox;
     display: flex;</code>
       </p>
-
-      <h4>[If container] && [Compatible with old flex]</h4>
       <p>
         <code>-webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;</code>
       </p>
 
-      <p>If less</p>
       <p>
-        <code>.display-flex-container{display: -webkit-box;
+        If using less <b>makes flex simple</b>
+      </p>
+      <p>
+        <code>.flex-container{display: -webkit-box;
     display: -webkit-flex;
     display: -moz-box;
     display: -ms-flexbox;
@@ -49,18 +49,64 @@
   flex-wrap: wrap;}</code>
       </p>
       <p>
-        <code>.display-flex-container;</code>
+        <code>.flex-container;</code>
       </p>
-      <!-- <h4>For flex items</h4>
-      <p><code>.display-flex-item{
+      <h4>For each flex items</h4>
+      <p>
+        <code>.flex-item{
     display: -webkit-box;
     display: -webkit-flex;
     display: -moz-box;
     display: -ms-flexbox;
     display: flex;
-  }</code></p>
-  <p><code>.display-flex-item;</code></p> -->
-      <small>I always forget these complicated attributes, so less/sass is a good choice</small>
+  }</code>
+      </p>
+      <p>
+        <code>.flex-item;</code>
+      </p>
+      <h4>Clear flex attr</h4>
+      <p>
+        <code>.flex-none{flex: none;
+    -webkit-flex: none;
+    -moz-flex: none;
+    -ms-flex: none;}</code>
+      </p>
+      <p>
+        <code>.flex-none;</code>
+      </p>
+      <h4>Flex item count</h4>
+      <p>
+        <code>.flex-count(@a){
+    -webkit-box-flex: @a;
+        -webkit-flex: @a;
+       -moz-box-flex: @a;
+            -ms-flex: @a;
+                flex: @a;
+  }</code>
+      </p>
+      <p>
+        <code>.flex-count("num");</code>
+      </p>
+      <h4>Flex align</h4>
+      <p><code>
+        .flex-align(@a){
+          -webkit-flex-align: @a;
+              -ms-flex-align: @a;
+         -webkit-align-items: @a;
+                 align-items: @a;
+            -webkit-box-pack: @a;
+               -moz-box-pack: @a;
+               -ms-flex-pack: @a;
+     -webkit-justify-content: @a;
+             justify-content: @a;
+           -webkit-box-align: @a;
+              -moz-box-align: @a;
+
+  }
+      </code></p>
+      <p><code>
+        @a:center / flex-start / flex-end / space-between / space-around
+      </code></p>
     </div>
     <div class="examples">
       <div id="example1" class="example-box">
@@ -74,25 +120,24 @@
         </p>
         <div class="grid grid--gutters">
           <div class="grid-cell">
-            <div class="Demo">
+            <div class="demo">
               1/ <u class="counter">2</u>
             </div>
           </div>
           <div class="grid-cell">
-            <div class="Demo">
+            <div class="demo">
               1/ <u class="counter">2</u>
             </div>
           </div>
         </div>
       </div>
-      <p>For items</p>
-      <p><code>
-        -webkit-box-flex: 1;
--webkit-flex: 1;
--moz-box-flex: 1;
--ms-flex: 1;
-flex: 1;
-</code></p>
+      <p>Code</p>
+      <p>
+        <code>.grid{.flex-container};</code>
+      </p>
+      <p>
+        <code>.grid-cell{.flex-count(1)};</code>
+      </p>
       <div id="example2" class="example-box">
         <div class="page-header">
           <h3>equal height</h3>
@@ -104,25 +149,26 @@ flex: 1;
         </p>
         <div class="grid grid--gutters grid--flexcells">
           <div class="grid-cell">
-            <div class="Demo">
+            <div class="demo">
               Being the savage's bowsman, that is, the person who pulled the bow-oar in his boat (the second one from forward), it was my cheerful duty to attend upon him while taking that hard-scrabble scramble upon the dead whale's back.
             </div>
           </div>
           <div class="grid-cell">
-            <div class="Demo">another cell</div>
+            <div class="demo">another cell</div>
           </div>
           <div class="grid-cell">
-            <div class="Demo">
+            <div class="demo">
               You have seen Italian organ-boys holding a dancing-ape by a long cord. Just so, from the ship's steep side, did I hold Queequeg down there in the sea, by what is technically called in the fishery a monkey-rope, attached to a strong strip of canvas belted round his waist.
             </div>
           </div>
         </div>
-        <p>For items</p>
-        <p><code>display: -webkit-box;
-    display: -webkit-flex;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: flex;</code></p>
+        <p>Code</p>
+        <p>
+          <code>.grid{.flex-containter}</code>
+        </p>
+        <p>
+          <code>.grid-cell{.flex-item;.flex-count(1);}</code>
+        </p>
       </div>
       <div id="example3" class="example-box">
         <div class="page-header">
@@ -131,64 +177,187 @@ flex: 1;
         </div>
 
         <p class="lead">remove flex attr and set a width</p>
-        
+
         <div class="grid grid--gutters">
           <div class="grid-cell width-half">
-            <div class="Demo">I have a 50% width now</div>
+            <div class="demo">I have a 50% width now</div>
           </div>
           <div class="grid-cell width-half">
-            <div class="Demo">I have a 50% width now</div>
+            <div class="demo">I have a 50% width now</div>
           </div>
         </div>
-        <p><code>width: 50% !important;
-flex: none !important;</code></p>
+        <p>
+          <code>width: 50% !important;
+flex: none !important;</code>
+        </p>
         <hr>
         <div class="grid grid--gutters">
           <div class="grid-cell width-3">
-            <div class="Demo">I have a 30% width now</div>
+            <div class="demo">I have a 30% width now</div>
           </div>
           <div class="grid-cell width-2">
-            <div class="Demo">I have a 20% width now</div>
+            <div class="demo">I have a 20% width now</div>
           </div>
           <div class="grid-cell width-4">
-            <div class="Demo">I have a 40% width now</div>
+            <div class="demo">I have a 40% width now</div>
           </div>
           <div class="grid-cell width-1">
-            <div class="Demo">I have a 10% width now</div>
+            <div class="demo">I have a 10% width now</div>
           </div>
         </div>
         <hr>
         <div class="grid grid--gutters grid--flexcells">
           <div class="grid-cell width-3">
-            <div class="Demo">I have a 30% width now</div>
+            <div class="demo">I have a 30% width now</div>
           </div>
           <div class="grid-cell width-1">
-            <div class="Demo">I have a 10% width now</div>
+            <div class="demo">I have a 10% width now</div>
           </div>
           <div class="grid-cell width-2">
-            <div class="Demo">I have a 20% width now</div>
+            <div class="demo">I have a 20% width now</div>
           </div>
           <div class="grid-cell width-4">
-            <div class="Demo">I have a 40% width now</div>
-          </div>
-    
-        </div>
-        <p>needs <code>flex:none</code> and <code>display:flex</code>, so confused!!</p>
-        <hr>
-        <div class="grid grid--gutters grid--flexcells">
-          <div class="grid-cell width-3" style="width:30%" id="increase">
-            <div class="Demo">I have a 30% width now</div>
-          </div>
-          <div class="grid-cell width-2">
-            <div class="Demo">I have a 20% width now</div>
-          </div>
-          <div class="grid-cell width-auto">
-            <div class="Demo">I am auto width!!</div>
+            <div class="demo">I have a 40% width now</div>
           </div>
 
         </div>
-        <p>The auto-width element must has <code>.display-flex-item;</code></p>
+        <p>Code</p>
+        <p>
+          <code>.grid-cell{.flex-none;.flex-item;}</code>
+        </p>
+        <hr>
+        <div class="grid grid--gutters grid--flexcells">
+          <div class="grid-cell width-3" style="width:30%" id="increase">
+            <div class="demo">I have a 30% width now</div>
+          </div>
+          <div class="grid-cell width-2">
+            <div class="demo">I have a 20% width now</div>
+          </div>
+          <div class="grid-cell width-auto">
+            <div class="demo">I am auto width!!</div>
+          </div>
+
+        </div>
         <button class="btn btn-sm btn-primary increase">Click to chage width</button>
+        <p>Code for fix-width item</p>
+        <p>
+          <code>.grid-cell{.flex-none;}</code>
+        </p>
+        <p>Code for the auto-width item</p>
+        <p>
+          <code>.grid-cell{.flex-item;}</code>
+        </p>
+
+      </div>
+      <div id="example4" class="example-box">
+        <div class="page-header">
+          <h3>Nested boxes</h3>
+        </div>
+        <p class="lead">boxes are infinitely nestable inside of other boxes</p>
+        <div class="grid grid--gutters grid--flexcells">
+          <div class="grid-cell flex-count2">
+            <div class="demo">
+              <div class="grid grid--gutters grid--flexcells">
+                <div class="grid-cell flex-count2">
+                  <div class="demo">
+                    <div class="grid grid--gutters grid--flexcells">
+                      <div class="grid-cell flex-count4">
+                        <div class="demo">flex:4</div>
+                      </div>
+                      <div class="grid-cell">
+                        <div class="demo"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="grid-cell flex-count1">
+                  <div class="demo">
+                    <div class="grid grid--gutters grid--flexcells">
+                      <div class="grid-cell">
+                        <div class="demo"></div>
+                      </div>
+                      <div class="grid-cell">
+                        <div class="demo"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="grid grid--gutters grid--flexcells">
+
+                <div class="grid-cell flex-count1">
+                  <div class="demo">
+                    <div class="grid grid--gutters grid--flexcells">
+                      <div class="grid-cell">
+                        <div class="demo"></div>
+                      </div>
+                      <div class="grid-cell">
+                        <div class="demo"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="grid-cell flex-count2">
+                  <div class="demo">
+                    <div class="grid grid--gutters grid--flexcells">
+                      <div class="grid-cell flex-count2">
+                        <div class="demo">flex:2</div>
+                      </div>
+                      <div class="grid-cell flex-count4">
+                        <div class="demo">flex:4</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="grid-cell flex-count1">
+            <div class="demo">
+              <div class="grid grid--gutters grid--flexcells">
+                <div class="grid-cell">
+                  <div class="demo">group 1</div>
+                </div>
+                <div class="grid-cell">
+                  <div class="demo">group 1</div>
+                </div>
+              </div>
+              <div class="grid grid--gutters grid--flexcells">
+                <div class="grid-cell">
+                  <div class="demo">group 2</div>
+                </div>
+                <div class="grid-cell flex-count3">
+                  <div class="demo">group 2</div>
+                </div>
+              </div>
+              <div class="grid grid--gutters grid--flexcells">
+                <div class="grid-cell flex-count2">
+                  <div class="demo">group 3</div>
+                </div>
+                <div class="grid-cell">
+                  <div class="demo">group 3</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="example5" class="example-box">
+        <div class="page-header">
+          <h3>Center aligned boxed</h3>
+        </div>
+        <p class="lead">need not care how many boxed, what's box's width</p>
+        <div class="grid grid--gutters grid--flexcells align-center">
+          <div class="grid-cell width-half">
+            <div class="demo">
+asdf
+
+            </div>
+          </div>
+
+
+        </div>
       </div>
     </div>
   </div>
